@@ -9,7 +9,7 @@ export interface AutoResearchConfig {
     regex: string;
   };
   commands: {
-    setup?: string;
+    setup?: string | null;
     evaluate: string;
     propose: string;
   };

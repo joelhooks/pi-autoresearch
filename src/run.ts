@@ -3,7 +3,7 @@ import { loadConfig } from "./config.js";
 import { add, checkout, commit, currentCommit, diff, hasChanges } from "./git.js";
 import { isAccepted, parseMetric, improvement } from "./metric.js";
 import { runShell } from "./shell.js";
-import { LOG_DIR, PATCH_DIR, appendExperiment, ensureStateDirs, loadState } from "./state.js";
+import { LOG_DIR, PATCH_DIR, appendExperiment, ensureStateDirs, loadState, saveState } from "./state.js";
 import type { AutoResearchConfig, ExperimentRecord } from "./types.js";
 
 async function evaluate(cfg: AutoResearchConfig) {
@@ -31,6 +31,10 @@ export async function runAutoResearch(configPath?: string) {
     bestMetric = base.metric;
     const logPath = `${LOG_DIR}/baseline.log`;
     writeFileSync(logPath, base.output);
+    const baselineState = loadState();
+    baselineState.bestMetric = bestMetric;
+    baselineState.bestExperiment = 0;
+    saveState(baselineState);
     console.log(`[baseline] ${cfg.metric.name}=${bestMetric}`);
   }
 

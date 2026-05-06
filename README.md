@@ -47,7 +47,7 @@ pi-autoresearch status
     "regex": "val_bpb:\\s*([0-9]+(?:\\.[0-9]+)?)"
   },
   "commands": {
-    "setup": "uv run prepare.py",
+    "setup": "uv run prepare.py", // set to null to skip setup
     "evaluate": "uv run train.py",
     "propose": "pi -p --no-session --no-extensions \"Read program.md. Propose and implement exactly one research experiment by editing only the configured target files. Keep the evaluation command runnable. Do not run the evaluation. Summarize the hypothesis in .pi-autoresearch/hypothesis.md.\""
   },
