@@ -9,16 +9,37 @@
   "exports": {
     ".": "./dist/index.js"
   },
-  "files": ["dist", "README.md", "templates"],
+  "files": [
+    "dist",
+    "README.md",
+    "templates"
+  ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "test": "bun test",
     "check": "bun test && tsc -p tsconfig.json"
   },
-  "keywords": ["pi", "autoresearch", "agents", "research", "experiments"],
+  "keywords": [
+    "pi",
+    "autoresearch",
+    "agents",
+    "research",
+    "experiments"
+  ],
   "license": "MIT",
   "devDependencies": {
     "@types/bun": "latest",
     "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@sinclair/typebox": "^0.34.33"
+  },
+  "peerDependencies": {
+    "@mariozechner/pi-coding-agent": "~0.52.12"
+  },
+  "pi": {
+    "extensions": [
+      "./dist/extension/index.js"
+    ]
   }
 }
