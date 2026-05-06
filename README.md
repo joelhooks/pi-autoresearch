@@ -74,6 +74,11 @@ For each iteration:
 
 This keeps the agent honest. The metric earns the patch. Everything else is theatre.
 
+
+## Prior art
+
+See [PRIOR_ART.md](./PRIOR_ART.md). Short version: this is not claiming first-mover status. There are already pi/Claude/Hermes/autoresearch descendants. This repo is a small TypeScript core harness + CLI that can become a pi extension wrapper without hiding the metric gate.
+
 ## Upstream inspiration
 
 - https://github.com/karpathy/autoresearch
