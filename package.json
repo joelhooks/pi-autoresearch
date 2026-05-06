@@ -11,8 +11,10 @@
   },
   "files": [
     "dist",
+    "src",
     "README.md",
-    "templates"
+    "PRIOR_ART.md",
+    "EXTENSION_DEV.md"
   ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
@@ -20,11 +22,14 @@
     "check": "bun test && tsc -p tsconfig.json"
   },
   "keywords": [
+    "pi-package",
     "pi",
+    "pi-coding-agent",
     "autoresearch",
     "agents",
     "research",
-    "experiments"
+    "experiments",
+    "metric-gated"
   ],
   "license": "MIT",
   "devDependencies": {
@@ -39,7 +44,21 @@
   },
   "pi": {
     "extensions": [
-      "./dist/extension/index.js"
+      "./src/extension/index.ts"
     ]
+  },
+  "author": "Joel Hooks",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joelhooks/pi-autoresearch.git"
+  },
+  "bugs": {
+    "url": "https://github.com/joelhooks/pi-autoresearch/issues"
+  },
+  "homepage": "https://github.com/joelhooks/pi-autoresearch#readme",
+  "peerDependenciesMeta": {
+    "@mariozechner/pi-coding-agent": {
+      "optional": true
+    }
   }
 }

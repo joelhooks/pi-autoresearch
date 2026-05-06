@@ -75,6 +75,20 @@ For each iteration:
 This keeps the agent honest. The metric earns the patch. Everything else is theatre.
 
 
+## Pi extension
+
+This package also exposes pi tools when installed as a pi package:
+
+- `autoresearch_init` — scaffold `autoresearch.config.json` and `program.md`
+- `autoresearch_run` — run the metric-gated experiment loop
+- `autoresearch_status` — inspect config and `.pi-autoresearch/state.json`
+
+The extension is intentionally thin. The CLI/core owns the loop; pi gets a clean tool surface.
+
+## Extension craft
+
+See [EXTENSION_DEV.md](./EXTENSION_DEV.md) for the Nico-inspired extension development bar this repo should hold.
+
 ## Prior art
 
 See [PRIOR_ART.md](./PRIOR_ART.md). Short version: this is not claiming first-mover status. There are already pi/Claude/Hermes/autoresearch descendants. This repo is a small TypeScript core harness + CLI that can become a pi extension wrapper without hiding the metric gate.
