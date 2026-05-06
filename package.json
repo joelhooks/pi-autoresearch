@@ -1,0 +1,24 @@
+{
+  "name": "pi-autoresearch",
+  "version": "0.1.0",
+  "description": "Karpathy-style autonomous research loops for pi: propose, run, score, keep or revert experiments.",
+  "type": "module",
+  "bin": {
+    "pi-autoresearch": "dist/cli.js"
+  },
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "files": ["dist", "README.md", "templates"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "bun test",
+    "check": "bun test && tsc -p tsconfig.json"
+  },
+  "keywords": ["pi", "autoresearch", "agents", "research", "experiments"],
+  "license": "MIT",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5.9.3"
+  }
+}
